@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Share</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Journey Share</div>
+
+        <div class="location">
+            <img src="assets/location-icon.png" alt="Location Icon" class="location-icon">
+            <span id="location-info">Fetching location...</span>
+        </div>
+
+        <div class="search-bar">
+            <input id="searchInput" type="text" placeholder="Enter Your City or Destination">
+            <button id="searchBtn">Search</button>
+        </div>
+          
+          
+        <div class="watchlist">
+            <img src="assets/Watchlist-icon.jpg" class="watchlist-icon">
+            <span id="watchlist-info"><a href="watchlist.html" class="no-underline">Watchlist</a></span>
+        </div>
+
+        <div class="signin">
+            <img src="assets/login-icon.jpg" class="signin-icon">
+            <span id="signin-info"><a href="signin.html" class="no-underline">Login</a></span>
+        </div>
+
+    </header>
+
+    <!-- Navigation Bar -->
+     
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="My_Account_Screen.html">My Account</a></li>
+            <li><a href="user_form_filling.html">Create a Trip <strong>+</strong></a></li>
+        </ul>
+    </nav>
+
+    <!-- Categories -->
+    <div class="categories">
+        <div class="category" data-category="Cycle">
+            <img src="assets/cycle.jpg" alt="Cycle">
+            <span>Cylce</span>
+        </div>
+        <div class="category" data-category="Scooter">
+            <img src="assets/scooter.jpg" alt="Scooter">
+            <span>Scooter</span>
+        </div>
+        <div class="category" data-category="Bike">
+            <img src="assets/bike.jpg" alt="Bike">
+            <span>Bike</span>
+        </div>
+        <div class="category" data-category="Car">
+            <img src="assets/car.jpg" alt="Car">
+            <span>Car</span>
+        </div>
+        <div class="category" data-category="Tempo">
+            <img src="assets/tempo.jpg" alt="Tempo">
+            <span>Auto</span>
+        </div>
+        <div class="category" data-category="Van">
+            <img src="assets/Van.webp" alt="Van">
+            <span>Van</span>
+        </div>
+        <div class="category" data-category="Suv">
+            <img src="assets/Suv.jpg" alt="Suv">
+            <span>SUV</span>
+        </div>
+        <div class="category" data-category="Scorpio">
+            <img src="assets/Scorpio.jpg" alt="Scorpio">
+            <span>Scorpio</span>
+        </div>
+    </div>
+
+    <!-- Slider Banner -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide" style="background-image: url('assets/Slider1.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/Slider2.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/Slider3.jpg');"></div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn prev">&#10094;</button>
+            <button class="control-btn next">&#10095;</button>
+        </div>
+
+        <div class="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+
+    <!-- Vehicle Grid -->
+    <div class="container">
+        <h2>Fresh Available Vechicle Reccomendations..</h2>
+        <div class="grid-container" id="vehicleGrid"> </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Journey Share All Rights Reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+

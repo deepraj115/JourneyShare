@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Signup Form */
+.signup-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 500px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .signup-btn {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <span class="error-message" id="username-error"></span>
+            </div>
+            
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <span class="error-message" id="password-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <span class="error-message" id="confirm-password-error"></span>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Reset previous error messages
+    document.querySelectorAll('.error-message').forEach(function(error) {
+        error.style.visibility = 'hidden';
+    });
+    
+    let isValid = true;
+
+    // Validate username
+    const username = document.getElementById('username').value;
+    if (username.trim() === '') {
+        document.getElementById('username-error').style.visibility = 'visible';
+        document.getElementById('username-error').textContent = 'Username is required';
+        isValid = false;
+    }
+
+    // Validate email
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!email.match(emailPattern)) {
+        document.getElementById('email-error').style.visibility = 'visible';
+        document.getElementById('email-error').textContent = 'Please enter a valid email';
+        isValid = false;
+    }
+
+    // Validate password
+    const password = document.getElementById('password').value;
+    if (password.length < 6) {
+        document.getElementById('password-error').style.visibility = 'visible';
+        document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+        isValid = false;
+    }
+
+    // Validate confirm password
+    const confirmPassword = document.getElementById('confirm-password').value;
+    if (confirmPassword !== password) {
+        document.getElementById('confirm-password-error').style.visibility = 'visible';
+        document.getElementById('confirm-password-error').textContent = 'Passwords do not match';
+        isValid = false;
+    }
+
+    if (isValid) {
+        alert('Sign Up Successful!');
+        // Proceed with form submission (could be AJAX or page redirection)
+    }
+});
+
+    </script>
+</body>
+</html>
